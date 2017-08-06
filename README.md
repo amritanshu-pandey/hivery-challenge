@@ -13,3 +13,7 @@
 2. Run docker container 
     - `docker run [--name <any_name>] -p <local_port>:5000 amritanshu16/hivery-challenge`
 3. API would now be accessible on local port specified in previous command
+
+# To-Do
+1. Add test cases for all end points
+2. Improve excpetion scenarios for different endpoints 
