@@ -1,0 +1,8 @@
+{ "_id" : { "$oid" : "597f216fda6762219043f11d" }, "name" : "apple", "type" : "fruit" }
+{ "_id" : { "$oid" : "597f217eda6762219043f11e" }, "name" : "beetroot", "type" : "fruit" }
+{ "_id" : { "$oid" : "597f218dda6762219043f11f" }, "name" : "celery", "type" : "vegetable" }
+{ "_id" : { "$oid" : "597f2199da6762219043f120" }, "name" : "orange", "type" : "fruit" }
+{ "_id" : { "$oid" : "597f21a9da6762219043f121" }, "name" : "carrot", "type" : "vegetable" }
+{ "_id" : { "$oid" : "597f21d8da6762219043f123" }, "name" : "banana", "type" : "fruit" }
+{ "_id" : { "$oid" : "597f21ecda6762219043f124" }, "name" : "strawberry", "type" : "fruit" }
+{ "_id" : { "$oid" : "597f21fbda6762219043f125" }, "name" : "cucumber", "type" : "vegetable" }
