@@ -2,20 +2,6 @@ language: python
 python:
 - '3.5'
 install: pip install -r req.txt
-services:
-- docker
-before_install:
-- docker login -u="$DOCKER_USER" -p="$DOCKER_PASS"
 script:
 - python3 conftest.py
-- docker build --no-cache -t amritanshu16/hivery-challenge .
-- docker tag amritanshu16/hivery-challenge:latest amritanshu16/hivery-challenge:v1
-- docker push amritanshu16/hivery-challenge
-env:
-  global:
-    DOCKER_EMAIL:
-      secure: ZAjpAkYHx2ar8FA5Ss98hZZAT/gnM/WgnVcInKVDPnye/AwuKNl5k6BjoMaam9yLqWZ3KmP7qYZfVQ3uGS0++ZD9l/YAnQfYHXm/vP389aygFwl7MADW0lP6HBQQc2AsQvf9sSZbtLfbzkHjqcXNSmwFkkU561My4DTg2Ta/b2rqfllrqQmFpcfDBcZk/vibPt+kpLwAVmbSKW01a01vtgAmS85Ice7eVgpte/18WuzpvF4u/UcmDS5K0iHCoc3ykkjpk9Cad4E3hzl+vjVaQ8Kc0Lfo12yhc66/8hXONMGWiuKHQcFEMAu1kfn54Jtaa152DB9yJxxlwz3YymtJYfOS+dEuxgAOVPLfCDDOEKBYA7l+EAMkWKBCm4SxYS4aJhTT/gRZAMj6OqPi9WRLRS2qdRkvRz/3TeQ6ibvkhnPPY2E/BRtiC8/UTX7cGg8Z4C8HkixFSkdU5XM4rsMFgsJdK3kGuq+f6ycJ7JMBk+HZIjLHQlkJKt4vyOwHlqI+nhCIFxbaOw/K8TrsEGvpB+W/k1Fe+f3K4RMQ4GQa18lPBaQKw2+gZqc+dAwrbgYdIyvFH7BnXhcgtwmqbwRxtkY68lpITBTHsXAqg6cVBqN5pm1riGaT7F3b1dDyMdMr3+KoB5Tq1HxO/EpXbxK9WznaYsSyUTuDqLpSxlWEcdw=
-    DOCKER_USER:
-      secure: TEb3wq/udGYDHd1UavDhhghoWGRWzO973r+vaopfKEVoxIUsj6tcP0RkgbZMpWahZouOK4P3gSqcPB7/2qlxX1jcsAvmZ/51qEIkldAM+mIBwUdDtesyl8cjHzgu6KovR8D660+TW5VrR+eFHoOagwCshTC69MYGe61MaBXWJT7pBEcNOtY6FksRwgnSIJiAoeWTCqw9lyC9xd10RRQ7Pjw3LyFXDH/fSQPg8ru7/nyx1cATU2NPcGUOIWMdS6zYY7nKVOF33THIsVedyPqamEE9qo53DILdsHc6/0gjVe0oq1oyWfHUJfPhsiwjvoSHg6oTCreMFcw2zPNVbhPIkfmThiHmbVa/MVyZw7DFuGgFlnGqOHDNVtHFUXk/PH0UD5drldRtVsFryllFEQLeuDn3975NCvK/l08b8qV7fs0JedmYoUBIoo4AVjWtwnDUgwxvu9vZzdxvmSe1MEiVaeaXfEp9JUBXgAO+8BcQGWHqcKUdHxN7dM8Q7RsGArIQDdJEivxj9mJ1Y29C91bmxoVZZZdxHYuvpIBF4ey6YVQXluVcSvVw91O4SMkbxWGTPyW2PnMwuWIj0NildbXAylAs9hd/tZ0UYZNTA/RxvGzn7j/LRX+L9qoeJ2r54aeEyPtGuApDi9w8A/bHmkgh2UWlAj2HdxAAphm/gxDukDg=
-    DOCKER_PASS:
-      secure: JsnsGdR1P2Ft3t6ibL4TartBTkC/sHn90/aQ+lSFsT5tL8Eq2Pnb1RsuNVKnlm0EgTcX0QplDBvZfBCE6o1VLsgN/lISHWrfHL64t9ZaTLPm87rs/5LrHYsydKYNtvOFrIYe6sDvhDuq9LAPmFk5haLVVN7rPp5rIKJejXYrFYzfZd1K2b5Sr2ILSx2KtWOu4WCwkrkhFVPMYsLuLTWFH6u71aUd4tGUlqkK7OCazbY2YS41i+AXXXEP7TU1pHoeM4+XT4gRfBtV+ZNJIv22jvOXtWnks/1R80ZH2LUL0YyJqHa+oe5vnmE4Cz1O4yUU4BaghaQAPoO1SYb2ef/Lw76G1Bnf4nlFKuL2+JLhKvHDm6oGk/nh+qAWBSWx0SWeYxrM/UxtMUT8mK6JF4GLfArqGz7Sg9iB60f3yTTLDpydI+IZB5Ivl1s8SsmzWV4l87Z74tKdstZxb9CNESIAqhkRYoy+L414O9dXtu42tcmnyH0CL486g10vKIowDgQxWv3Ez7SXilCgQ3D7wlNNF7BHYtCo3B1d5TW998rYWhoBzmG2x9K4lSgR8B0rucTcNEeO3oYBKl7znWYoO1NoyK/lwNX2mvf31IBMlP15z0DujEXVvrGf7ErTf1X9wPZBnSHNZ6qRE+yM70Rih+hxt28E4U64/mfomejcb+zYlPQ=
+- curl -s -X POST https://cloud.docker.com/api/build/v1/source/eb3d6616-055c-47cc-a077-746bfb814151/trigger/61c7c108-3f8f-4576-9342-a6119e062db8/call/
