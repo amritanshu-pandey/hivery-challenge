@@ -84,11 +84,15 @@ def route_two_people():
         person2_details = MONGO.db.people.find_one({'name':person2})
         person1_response = {
             'username':person1_details['name'],
-            'age':person1_details['age']
+            'age':person1_details['age'],
+            'address':person1_details['address'],
+            'phone':person1_details['phone']
         }
         person2_response = {
             'username':person2_details['name'],
-            'age':person2_details['age']
+            'age':person2_details['age'],
+            'address':person2_details['address'],
+            'phone':person2_details['phone']
         }
         common_friends = find_common_friends(person1_details, person2_details)
         response = {
