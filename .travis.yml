@@ -2,16 +2,15 @@ language: python
 python:
   - "3.5"
 install: "pip install -r req.txt"
-script:
-  - python3 conftest.py
 services:  
   #Enable docker service inside travis
   - docker
 
 before_install:  
-  - docker login -e="$DOCKER_EMAIL" -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
+  - docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
 
 script:  
+  - python3 conftest.py
   #build the image
   - docker build --no-cache -t amritanshu16/hivery-challenge .
   #tag the build
